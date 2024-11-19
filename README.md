@@ -5,29 +5,30 @@
 ## LESSON 3: POINTER
 ### Khái niệm và các loại Pointer
 Trong ngôn ngữ lập trình C, con trỏ (pointer) là một biến chứa địa chỉ bộ nhớ của một đối tượng (biến,hàm,mảng) khác. Việc sử dụng con trỏ giúp chúng ta thực hiện các thao tác trên bộ nhớ một cách linh hoạt hơn. Dưới đây là một số khái niệm cơ bản về con trỏ trong C:
-- Cách khai báo: 
-  ```c
+#### Cách khai báo: 
+   
     int *ptr;  // con trỏ đến kiểu int
     char *ptr_char;  // con trỏ đến kiểu char
     float *ptr_float;  // con trỏ đến kiểu float
-![image](https://github.com/DangTruongBT/advance-C/assets/103482832/704bd89a-b9aa-4829-acd2-d1aeae4b50ce)
 - Lấy địa chỉ của một biến:
-  ```c 
+   ```c 
     int x = 10;
     int *ptr_x = &x;  // ptr_x giờ đây chứa địa chỉ của x
 - Sử dụng con trỏ để truy cập giá trị:
     int y = *ptr_x;  // y sẽ bằng giá trị của x
- 
-	Kích thước của con trỏ sẽ phụ thuộc kiến trúc máy tính và trình biên dịch. Ta có thể dùng sizeof() để kiểm tra kích thước của con trỏ:
+ ![image](https://github.com/user-attachments/assets/2799e903-2562-470a-b884-70fd4158ad98)
+     - chú ý: địa chỉ con trỏ đang trỏ tới: ptr = 0x01; địa chỉ của con trỏ: &ptr = 0xf1;giá trị tại địa chỉ con trỏ trỏ tới *ptr = *(0x01)=5
+ - Kích thước của con trỏ sẽ phụ thuộc kiến trúc máy tính và trình biên dịch. Ta có thể dùng sizeof() để kiểm tra kích thước của con trỏ:
+c```
+   
 #include <stdio.h>
-
 int main() {
     int *ptr;
     printf("Size of pointer: %lu bytes\n", sizeof(ptr));
     return 0;
 }
 
-	Ví dụ:
+ - Ví dụ:
 #include <stdio.h>
 void swap(int *a, int *b)
 {
@@ -48,9 +49,8 @@ int main()
     return 0;
 }
 
-
-Các loại pointer:
-	Void pointer:
+#### Các loại Pointer:
+Void pointer:
 Void pointer thường dùng để trỏ để tới bất kỳ địa chỉ nào mà không cần biết tới kiểu dữ liệu của giá trị tại địa chỉ đó.
 void *ptr_void;
 
