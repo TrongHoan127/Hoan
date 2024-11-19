@@ -4,18 +4,19 @@
         
 ## LESSON 3: POINTER
 ### Khái niệm và các loại Pointer
-Trong ngôn ngữ lập trình C, con trỏ (pointer) là một biến chứa địa chỉ bộ nhớ của một biến khác. Việc sử dụng con trỏ giúp chúng ta thực hiện các thao tác trên bộ nhớ một cách linh hoạt hơn. Dưới đây là một số khái niệm cơ bản về con trỏ trong C:
-Cách khai báo: 
+Trong ngôn ngữ lập trình C, con trỏ (pointer) là một biến chứa địa chỉ bộ nhớ của một đối tượng (biến,hàm,mảng) khác. Việc sử dụng con trỏ giúp chúng ta thực hiện các thao tác trên bộ nhớ một cách linh hoạt hơn. Dưới đây là một số khái niệm cơ bản về con trỏ trong C:
+- Cách khai báo: 
   ```c
     int *ptr;  // con trỏ đến kiểu int
     char *ptr_char;  // con trỏ đến kiểu char
     float *ptr_float;  // con trỏ đến kiểu float
-Lấy địa chỉ của một biến:
+![image](https://github.com/DangTruongBT/advance-C/assets/103482832/704bd89a-b9aa-4829-acd2-d1aeae4b50ce)
+- Lấy địa chỉ của một biến:
+  ```c 
     int x = 10;
     int *ptr_x = &x;  // ptr_x giờ đây chứa địa chỉ của x
-Sử dụng con trỏ để truy cập giá trị:
+- Sử dụng con trỏ để truy cập giá trị:
     int y = *ptr_x;  // y sẽ bằng giá trị của x
-
  
 	Kích thước của con trỏ sẽ phụ thuộc kiến trúc máy tính và trình biên dịch. Ta có thể dùng sizeof() để kiểm tra kích thước của con trỏ:
 #include <stdio.h>
