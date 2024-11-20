@@ -28,7 +28,7 @@ Trong ngôn ngữ lập trình C, con trỏ (pointer) là một biến chứa đ
   }
 
 
-- Kích thước của con trỏ sẽ phụ thuộc kiến trúc máy tính và trình biên dịch. Ta có thể dùng sizeof() để kiểm tra kích thước của con trỏ:
+- Ví dụ:
   ```c
   #include <stdio.h>
   void swap(int *a, int *b)
@@ -38,9 +38,8 @@ Trong ngôn ngữ lập trình C, con trỏ (pointer) là một biến chứa đ
     *b = tmp;
 
   }
-
-int main()
-{
+  int main()
+  {
    int a = 10, b = 20;
    swap(&a, &b);
 
@@ -48,40 +47,41 @@ int main()
    printf("value b is: %d\n", b);
 
     return 0;
-}
+  }
 
  #### Các loại Pointer:
-Void pointer:
-Void pointer thường dùng để trỏ để tới bất kỳ địa chỉ nào mà không cần biết tới kiểu dữ liệu của giá trị tại địa chỉ đó.
-void *ptr_void;
+##### Void pointer:
+- Void pointer thường dùng để trỏ để tới bất kỳ địa chỉ nào mà không cần biết tới kiểu dữ liệu của giá trị tại địa chỉ đó.
+  ```c
+  void *ptr_void;
+- Ví dụ:
+  ```c
+     #include <stdio.h>
+     #include <stdlib.h>
 
-
-	Ví dụ:
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
+     int main() {
    
-    int value = 5;
-    double test = 15.7;
-    char letter = 'A';
-   
-    void *ptr = &value;
-    printf("value is: %d\n", *(int*)(ptr));
+	    int value = 5;
+	    double test = 15.7;
+	    char letter = 'A';
+	   
+	    void *ptr = &value;
+	    printf("value is: %d\n", *(int*)(ptr));
+	
+	    ptr = &test;
+	    printf("value is: %f\n", *(double*)(ptr));
+	
+	    ptr = &letter;
+	    printf("value is: %c\n", *(char*)(ptr));
+	   
+	    return 0;
+       }
 
-    ptr = &test;
-    printf("value is: %f\n", *(double*)(ptr));
 
-    ptr = &letter;
-    printf("value is: %c\n", *(char*)(ptr));
-   
-    return 0;
-}
-
-
-	Pointer to Constant:
-	Định nghĩa một con trỏ không thể thay đổi giá trị tại địa chỉ mà nó trỏ đến thông qua dereference nhưng giá trị tại địa chỉ đó có thể thay đổi.
-	Ví dụ:
+#### Pointer to Constant:
+- Định nghĩa một con trỏ không thể thay đổi giá trị tại địa chỉ mà nó trỏ đến thông qua dereference nhưng giá trị tại địa chỉ đó có thể thay đổi.
+- Ví dụ:
+  ```c
 #include <stdio.h>
 #include <stdlib.h>
 
