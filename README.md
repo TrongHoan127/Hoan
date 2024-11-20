@@ -18,25 +18,26 @@ Trong ngôn ngữ lập trình C, con trỏ (pointer) là một biến chứa đ
     int y = *ptr_x;  // y sẽ bằng giá trị của x
  ![image](https://github.com/user-attachments/assets/2799e903-2562-470a-b884-70fd4158ad98)
      - chú ý: địa chỉ con trỏ đang trỏ tới: ptr = 0x01; địa chỉ của con trỏ: &ptr = 0xf1;giá trị tại địa chỉ con trỏ trỏ tới *ptr = *(0x01)=5
- - Kích thước của con trỏ sẽ phụ thuộc kiến trúc máy tính và trình biên dịch. Ta có thể dùng sizeof() để kiểm tra kích thước của con trỏ:
-c```
-   
-#include <stdio.h>
-int main() {
+- Kích thước của con trỏ sẽ phụ thuộc kiến trúc máy tính và trình biên dịch. Ta có thể dùng sizeof() để kiểm tra kích thước của con trỏ:
+  ```c 
+  #include <stdio.h>
+  int main() {
     int *ptr;
     printf("Size of pointer: %lu bytes\n", sizeof(ptr));
     return 0;
-}
+  }
 
- - Ví dụ:
-#include <stdio.h>
-void swap(int *a, int *b)
-{
+
+- Kích thước của con trỏ sẽ phụ thuộc kiến trúc máy tính và trình biên dịch. Ta có thể dùng sizeof() để kiểm tra kích thước của con trỏ:
+  ```c
+  #include <stdio.h>
+  void swap(int *a, int *b)
+  {
     int tmp = *a;
     *a = *b;
     *b = tmp;
 
-}
+  }
 
 int main()
 {
@@ -49,7 +50,7 @@ int main()
     return 0;
 }
 
-#### Các loại Pointer:
+ #### Các loại Pointer:
 Void pointer:
 Void pointer thường dùng để trỏ để tới bất kỳ địa chỉ nào mà không cần biết tới kiểu dữ liệu của giá trị tại địa chỉ đó.
 void *ptr_void;
